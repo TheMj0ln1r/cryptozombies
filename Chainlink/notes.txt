@@ -1,0 +1,11 @@
+Chainlink is a framework for decentralized oracle networks (DONs), and is a way to get data in from multiple sources across multiple oracles. This DON aggregates data in a decentralized manner and places it on the blockchain in a smart contract (often referred to as a "price reference feed" or "data feed") for us to read from. So all we have to do, is read from a contract that the Chainlink network is constantly updating for us!
+
+The Chainlink network uses a system called Off-Chain Reporting to reach a consensus on data off-chain, and report the data in a cryptographically proven single transaction back on-chain for users to digest.
+
+To have our contract pull the price from another contract, we need its interface / ABI. 
+
+We want to import the AggregatorV3Interface from the Chainlink GitHub repository. This interface will include all the functions that we need to interact with a Chainlink Data Feed contract, including functions like latestRoundData() which will return all the information we need.
+
+Each network will have a different address for each piece of data you want. The address of the ETH/USD contract will be different on Mainnet Ethereum from Mainnet Polygon, from a Rinkeby testnet, etc.
+
+Chainlink VRF includes on-chain verification contracts that cryptographically prove that the random number the contract is getting is really random.
